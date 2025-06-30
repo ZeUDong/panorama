@@ -28,7 +28,7 @@
 </head>
 <body>
 
-<h1>Panoramic Video Showcase</h1>
+<h1>Ours</h1>
 
 <script>
   for (let i = 0; i <= 28; i++) {
@@ -44,6 +44,20 @@
   }
 </script>
 
+<h1>360DVD</h1>
+<script>
+for (let i = 3; i <= 24; i++) {
+  document.write(`
+    <div class="video-container">
+      <h2>360DVD Video ${i}</h2>
+      <video controls width="640">
+        <source src="videos/0(${i}).mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  `);
+}
+</script>
 </body>
 </html>
 
