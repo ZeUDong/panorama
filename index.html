@@ -47,9 +47,10 @@
 <h1>360DVD</h1>
 <script>
 for (let i = 3; i <= 24; i++) {
+  const index = i - 2;
   document.write(`
     <div class="video-container">
-      <h2>360DVD Video ${i-2}</h2>
+      <h2>360DVD Video ${index}</h2>
       <video controls width="640">
         <source src="videos/0(${i}).mp4" type="video/mp4">
         Your browser does not support the video tag.
