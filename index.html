@@ -38,7 +38,8 @@
 </div>
 
 <script>
-for (let i = 0; i <= 28; i++) {
+for (let i = 0; i <= 21; i++) {
+  const dvdIndex = i + 3;
   document.write(`
     <div class="video-row">
       <div class="video-container">
@@ -51,7 +52,7 @@ for (let i = 0; i <= 28; i++) {
       <div class="video-container">
         <h2>360DVD Video ${i}</h2>
         <video controls>
-          <source src="videos/0%20%28${i + 3}%29.mp4" type="video/mp4">
+          <source src="videos/0%20%28${dvdIndex}%29.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
@@ -62,5 +63,4 @@ for (let i = 0; i <= 28; i++) {
 
 </body>
 </html>
-
 
