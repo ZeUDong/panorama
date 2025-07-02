@@ -8,12 +8,12 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 10px;
-      gap: 2px;
+      gap: 1px;
     }
     .video-container {
       width: 50%;
-      margin: 0; 
-      padding: 0; 
+      margin: 0; /* 去掉所有外边距 */
+      padding: 0; /* 去掉所有内边距 */
     }
     .single-video {
       margin-bottom: 20px;
@@ -102,6 +102,34 @@ for (let i = 3; i <= 24; i++) {
     </div>
   `);
 }
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const pairs = [];
+
+  // 查找所有 video 元素并成对存储
+  const allVideos = document.querySelectorAll("video");
+
+  for (let i = 0; i < allVideos.length; i += 2) {
+    pairs.push([allVideos[i], allVideos[i + 1]]);
+  }
+
+  // 为每一对视频绑定播放和暂停同步
+  pairs.forEach(([v1, v2]) => {
+    v1.addEventListener("play", () => {
+      if (v2.paused) v2.play();
+    });
+    v2.addEventListener("play", () => {
+      if (v1.paused) v1.play();
+    });
+    v1.addEventListener("pause", () => {
+      if (!v2.paused) v2.pause();
+    });
+    v2.addEventListener("pause", () => {
+      if (!v1.paused) v1.pause();
+    });
+  });
+});
 </script>
 
 </body>
