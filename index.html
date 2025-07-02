@@ -1,68 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
-  <title>Panoramic Video Showcase</title>
+  <title>Video Comparison</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background-color: #f2f2f2;
-    }
-    h1 {
-      color: #333;
+    .video-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
     }
     .video-container {
-      margin-bottom: 30px;
-      background: white;
-      padding: 10px;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      width: 48%;
     }
     video {
       width: 100%;
-      max-width: 800px;
-      border: 1px solid #ccc;
+      height: auto;
+    }
+    h2 {
+      font-size: 16px;
+      margin-bottom: 5px;
     }
   </style>
 </head>
 <body>
 
-<h1>Ours</h1>
+<h1>Panoramic Video Comparison</h1>
+<div style="text-align: center; margin-top: 20px; margin-bottom: 40px;">
+  <h2>Panoramic Video Generation with Projection-Aware LoRA</h2>
+  <p>
+    <strong>Zeyu Dong</strong><sup>*1</sup>,
+    <strong>Yuyang Yin</strong><sup>*2</sup>,
+    Yuqi Li<sup>3</sup>,
+    Hao-Xiang Guo<sup>†4</sup>,
+    Yikai Wang<sup>†1</sup>
+  </p>
+  <p><sup>*</sup>Equal contribution. <sup>†</sup>Corresponding authors.</p>
+</div>
 
 <script>
-  for (let i = 0; i <= 28; i++) {
-    document.write(`
+for (let i = 0; i <= 28; i++) {
+  document.write(`
+    <div class="video-row">
       <div class="video-container">
-        <h2>Video ${i+1}</h2>
+        <h2>Ours Video ${i}</h2>
         <video controls>
           <source src="videos/video_citypark_${i}.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
-    `);
-  }
-</script>
-
-<h1>360DVD</h1>
-<script>
-for (let i = 3; i <= 24; i++) {
-  const index = i - 2;
-  document.write(`
-    <div class="video-container">
-      <h2>360DVD Video ${index}</h2>
-      <video controls width="640">
-        <source src="videos/0%20(${i}).mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+      <div class="video-container">
+        <h2>360DVD Video ${i}</h2>
+        <video controls>
+          <source src="videos/0%20%28${i + 3}%29.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
   `);
 }
 </script>
-</body>
-</html>
-
 
 </body>
 </html>
+
 
