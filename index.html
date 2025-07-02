@@ -4,10 +4,15 @@
   <meta charset="UTF-8">
   <title>Video Comparison</title>
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1000px;
+      margin: auto;
+    }
     .video-row {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
     .video-container {
       width: 48%;
@@ -16,17 +21,25 @@
       width: 100%;
       height: auto;
     }
+    h1, h2 {
+      text-align: center;
+    }
     h2 {
       font-size: 16px;
       margin-bottom: 5px;
+    }
+    .authors, .affiliations {
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.6;
     }
   </style>
 </head>
 <body>
 
 <h1>Panoramic Video Comparison</h1>
-<div style="text-align: center; margin-top: 20px; margin-bottom: 40px;">
-  <h2>Panoramic Video Generation with Projection-Aware LoRA</h2>
+
+<div class="authors">
   <p>
     <strong>Zeyu Dong</strong><sup>*1</sup>,
     <strong>Yuyang Yin</strong><sup>*2</sup>,
@@ -35,6 +48,13 @@
     Yikai Wang<sup>†1</sup>
   </p>
   <p><sup>*</sup>Equal contribution. <sup>†</sup>Corresponding authors.</p>
+</div>
+
+<div class="affiliations">
+  <p><sup>1</sup> School of Artificial Intelligence, Beijing Normal University</p>
+  <p><sup>2</sup> Institute of Information Science, Beijing Jiaotong University</p>
+  <p><sup>3</sup> Institute of Computing Technology, Chinese Academy of Sciences</p>
+  <p><sup>4</sup> Skywork AI</p>
 </div>
 
 <script>
